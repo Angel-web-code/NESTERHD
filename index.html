@@ -17,7 +17,7 @@
             padding: 0;
         }
 
-        /* ===== INTRO PRO ===== */
+        /* ===== INTRO ===== */
         #intro {
             position: fixed;
             top: 0;
@@ -71,6 +71,28 @@
                 opacity: 0;
                 visibility: hidden;
             }
+        }
+
+        /* ===== BARRA DE CARGA ===== */
+        .barra {
+            width: 300px;
+            height: 10px;
+            background: #222;
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progreso {
+            height: 100%;
+            width: 0%;
+            background: red;
+            animation: cargar 4s linear forwards;
+        }
+
+        @keyframes cargar {
+            from { width: 0%; }
+            to { width: 100%; }
         }
 
         /* ===== CONTENIDO ===== */
@@ -134,6 +156,10 @@
         <h1>NESTERHD</h1>
         <p class="sub">Capítulo 5 - EN DESARROLLO</p>
         <p class="mensaje">Cargando...</p>
+
+        <div class="barra">
+            <div class="progreso"></div>
+        </div>
     </div>
 
     <!-- ===== CONTENIDO ===== -->
@@ -154,11 +180,25 @@
         </a>
     </div>
 
-    <audio id="audioFondo" src="140529.mp3" autoplay loop></audio>
+    <!-- AUDIO -->
+    <audio id="audioIntro" src="intro.mp3"></audio>
+    <audio id="audioFondo" src="140529.mp3" loop></audio>
+
     <button class="audio-btn" onclick="toggleAudio()">🎵 Música</button>
 
     <script>
         const audio = document.getElementById('audioFondo');
+        const introAudio = document.getElementById('audioIntro');
+
+        window.onload = () => {
+            introAudio.play();
+
+            setTimeout(() => {
+                introAudio.pause();
+                audio.play();
+            }, 4000);
+        }
+
         function toggleAudio() {
             if(audio.paused) {
                 audio.play();
@@ -169,4 +209,4 @@
     </script>
 
 </body>
-</html>
+    </html>
