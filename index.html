@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>NESTERHD</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="icono.jpg">
 
     <style>
@@ -32,7 +31,7 @@
             z-index: 9999;
 
             animation: fadeOut 2s ease forwards;
-            animation-delay: 4.3s;
+            animation-delay: 5s;
         }
 
         #intro h1 {
@@ -73,18 +72,18 @@
             }
         }
 
-        /* ===== GLITCH ===== */
+        /* ===== GLITCH MEJORADO ===== */
         @keyframes glitch {
-            0% { transform: translate(0); }
-            20% { transform: translate(-5px, 5px); }
-            40% { transform: translate(5px, -5px); }
-            60% { transform: translate(-5px, -5px); }
-            80% { transform: translate(5px, 5px); }
-            100% { transform: translate(0); }
+            0% { transform: translate(0); filter: hue-rotate(0deg); }
+            20% { transform: translate(-10px, 10px); filter: hue-rotate(90deg); }
+            40% { transform: translate(10px, -10px); filter: hue-rotate(180deg); }
+            60% { transform: translate(-10px, -10px); filter: hue-rotate(270deg); }
+            80% { transform: translate(10px, 10px); filter: hue-rotate(360deg); }
+            100% { transform: translate(0); filter: hue-rotate(0deg); }
         }
 
         .glitch {
-            animation: glitch 0.3s;
+            animation: glitch 0.5s;
         }
 
         /* ===== BARRA ===== */
@@ -208,15 +207,16 @@
         window.onload = () => {
             introAudio.play();
 
+            // GLITCH FUERTE
             setTimeout(() => {
                 intro.classList.add("glitch");
-                introAudio.pause();
-
-                setTimeout(() => {
-                    audio.play();
-                }, 300);
-
             }, 4000);
+
+            // SALIDA
+            setTimeout(() => {
+                introAudio.pause();
+                audio.play();
+            }, 4500);
         }
 
         function toggleAudio() {
