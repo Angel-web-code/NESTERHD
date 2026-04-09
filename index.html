@@ -13,15 +13,28 @@
             padding: 0;
         }
 
+        /* Animaciones */
+        @keyframes slideDown {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
         h1 {
             font-size: 40px;
             margin-top: 20px;
+            animation: slideDown 1s ease-out forwards;
         }
 
         p {
             font-size: 18px;
             color: gray;
             margin-bottom: 30px;
+            animation: fadeIn 2s ease-out forwards;
         }
 
         .galeria {
@@ -36,6 +49,7 @@
             margin: 10px;
             border-radius: 10px;
             transition: 0.3s;
+            animation: fadeIn 2.5s ease-out forwards;
         }
 
         .galeria img:hover {
@@ -55,6 +69,7 @@
             border-radius: 10px;
             cursor: pointer;
             transition: 0.3s;
+            animation: fadeIn 3s ease-out forwards;
         }
 
         .descarga button:hover {
@@ -72,6 +87,7 @@
             border-radius: 10px;
             cursor: pointer;
             transition: 0.3s;
+            animation: fadeIn 3.5s ease-out forwards;
         }
 
         .audio-btn:hover {
@@ -83,7 +99,7 @@
 <body>
 
     <h1>NESTERHD</h1>
-    <p>Mi Fangame de Poppy Playtime 5 (en desarrollo)</p>
+    <p>Mi Fangame de Poppy Playtime 😈</p>
 
     <div class="galeria">
         <img src="menu.jpg" alt="Menú">
