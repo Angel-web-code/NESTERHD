@@ -32,7 +32,7 @@
             z-index: 9999;
 
             animation: fadeOut 2s ease forwards;
-            animation-delay: 4s;
+            animation-delay: 4.3s;
         }
 
         #intro h1 {
@@ -73,7 +73,21 @@
             }
         }
 
-        /* ===== BARRA DE CARGA ===== */
+        /* ===== GLITCH ===== */
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-5px, 5px); }
+            40% { transform: translate(5px, -5px); }
+            60% { transform: translate(-5px, -5px); }
+            80% { transform: translate(5px, 5px); }
+            100% { transform: translate(0); }
+        }
+
+        .glitch {
+            animation: glitch 0.3s;
+        }
+
+        /* ===== BARRA ===== */
         .barra {
             width: 300px;
             height: 10px;
@@ -189,13 +203,19 @@
     <script>
         const audio = document.getElementById('audioFondo');
         const introAudio = document.getElementById('audioIntro');
+        const intro = document.getElementById('intro');
 
         window.onload = () => {
             introAudio.play();
 
             setTimeout(() => {
+                intro.classList.add("glitch");
                 introAudio.pause();
-                audio.play();
+
+                setTimeout(() => {
+                    audio.play();
+                }, 300);
+
             }, 4000);
         }
 
@@ -209,4 +229,4 @@
     </script>
 
 </body>
-    </html>
+</html>
