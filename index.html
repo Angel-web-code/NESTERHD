@@ -76,3 +76,44 @@
 
         .audio-btn:hover {
             background-color: #55ff55;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>NESTERHD</h1>
+    <p>Mi Fangame de Poppy Playtime 😈</p>
+
+    <div class="galeria">
+        <img src="menu.jpg" alt="Menú">
+        <img src="juego.jpg" alt="Gameplay">
+        <img src="juego2.jpg" alt="Gameplay 2">
+        <img src="juego3.jpg" alt="Gameplay 3">
+        <img src="juego4.jpg" alt="Gameplay 4">
+    </div>
+
+    <div class="descarga">
+        <!-- Placeholder para el link del APK -->
+        <a href="#" target="_blank">
+            <button>Descargar APK 📲</button>
+        </a>
+    </div>
+
+    <!-- Música de fondo -->
+    <audio id="audioFondo" src="140529.mp3" autoplay loop></audio>
+    <button class="audio-btn" onclick="toggleAudio()">🎵 Pausar/Reproducir Música</button>
+
+    <script>
+        const audio = document.getElementById('audioFondo');
+        function toggleAudio() {
+            if(audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+
+</body>
+</html>
