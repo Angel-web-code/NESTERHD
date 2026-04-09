@@ -8,7 +8,9 @@
             background-color: black;
             color: white;
             text-align: center;
-            font-family: Arial;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         h1 {
@@ -19,10 +21,14 @@
         p {
             font-size: 18px;
             color: gray;
+            margin-bottom: 30px;
         }
 
         .galeria {
-            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
         }
 
         .galeria img {
@@ -35,16 +41,44 @@
         .galeria img:hover {
             transform: scale(1.1);
         }
+
+        .descarga {
+            margin-bottom: 50px;
+        }
+
+        .descarga button {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .descarga button:hover {
+            background-color: #ff5555;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
 
     <h1>NESTERHD</h1>
-    <p>Mi Fangame de Poppy Playtime 5 </p>
+    <p>Mi Fangame de Poppy Playtime 5</p>
 
     <div class="galeria">
-        <img src="menu5.jpg">
-        <img src="juego.jpg">
+        <img src="menu.jpg" alt="Menú">
+        <img src="juego.jpg" alt="Gameplay">
+        <!-- Puedes agregar más imágenes -->
+    </div>
+
+    <div class="descarga">
+        <!-- Placeholder para el link del APK -->
+        <a href="#" target="_blank">
+            <button>Descargar APK 📲</button>
+        </a>
     </div>
 
 </body>
